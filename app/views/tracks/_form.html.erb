@@ -1,0 +1,9 @@
+<%= form_with model: track do |f| %>
+    <label>Enter Track ID </label>
+        <div class="border-solid border-2 border-black"> 
+            <%= f.text_field :track_id %> 
+        </div>
+
+
+    <%= f.submit "Get Info" %>
+<% end%>
