@@ -10,4 +10,8 @@ class PagesController < ApplicationController
         key_arr = ["C","C#/Db", "D", "D#/Eb", "E", "F", "G", "G#/Ab", "A", "A#/Bb", "B"]
         
     end
+
+    def landing
+
+    end
 end

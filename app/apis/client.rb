@@ -25,7 +25,7 @@ class Client
         @connection ||= Faraday.new(
             url: BASE_URL,
             headers:{
-                "Authorization" => "Bearer BQBgkxwsuDT2FWzaCFI8c7tnnrooUaJwQIxwSKezvkCiR8aVGhJuF92JtgW5CWvkRY-qlkJypGFbXaLuyMRmA_SnxhL8fmNlhx6UB2pCzIczc1HJnkqqMrMUMi_HBYU5LZPvOUSJEMaIpdHu"
+                "Authorization" => "Bearer BQBvDvJF5btHj6v6_iwy2d3_TvYC1bXNZBw7vgk27eIjw7XSjtdVS45Zu0c4HNy7WDEbyxIlMY0rSQpEqkooDooemFt8XyBWAYkEvCBASDEwKiVWKGQrqWJnjxFaxLSMOAazzr5WioPrK5Dw"
             },
         )
     end
