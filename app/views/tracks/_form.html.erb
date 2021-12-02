@@ -1,9 +1,7 @@
 <%= form_with model: track do |f| %>
-    <label>Enter Track ID </label>
-        <div class="border-solid border-2 border-black"> 
-            <%= f.text_field :track_id %> 
-        </div>
+    <p>
+        <%= f.text_field :track_id, class: "rounded border-green-200 border-2 w-96 p-2 mt-2" %> 
+    <p>
 
-
-    <%= f.submit "Get Info" %>
+    <%= f.submit "Get Info", class: "mt-2 font-bold p-2 rounded hover:bg-green-200" %>
 <% end%>

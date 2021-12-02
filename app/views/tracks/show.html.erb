@@ -1,43 +1,45 @@
-<%= @track_info["name"] %>
-<br/>
-<%= @track_info["album"]["artists"][0]["name"]%>
 
-<br/>
 
-<%= 
-key_arr = ["C","C#/Db", "D", "D#/Eb", "E", "F", "G", "G#/Ab", "A", "A#/Bb", "B"]
-mode_arr = ["Minor","Major"]
+<div class="flex flex-row min-h-screen justify-center items-center rounded overflow-hidden shadow-lg">
 
-"Key: " + key_arr[@analysis["track"]["key"]] + " " + mode_arr[@analysis["track"]["mode"]]
+    <%= image_tag @track_info["album"]["images"][0]["url"], size: "300x300" %>
+    <div class="px-6 py-4">
 
-%>
-<br/>
+        <p class="font-bold"> <%= @track_info["name"]%> </p>
+        <br/>
+        <%= @track_info["album"]["artists"][0]["name"]%>
+        <br/>
 
-<%= "Tempo(in beats per minute):" + @analysis["track"]["tempo"].round.to_s + " bpm"%>
-<br/>
-<%="Time Signature: " + @analysis["track"]["time_signature"].to_s + "/4"%>
-<br/>
+        <%= 
+        key_arr = ["C","C#/Db", "D", "D#/Eb", "E", "F", "F#/Gb", "G", "G#/Ab", "A", "A#/Bb", "B"]
+        mode_arr = ["Minor","Major"]
 
-<%= 
+        "Key: " + key_arr[@analysis["track"]["key"]] + " " + mode_arr[@analysis["track"]["mode"]]
 
-danceability = @features["danceability"]
+        %>
+        <br/>
 
-if danceability > 0.5 and danceability < 0.8
-        "You can dance to this song"
-    elsif danceability > 0.8 
-        "You can REALLY get down to this song"
-    else
-        "You can kinda dance to this song?"
-end
-%>
-<br>
+        <%= "Tempo(in beats per minute):" + @analysis["track"]["tempo"].round.to_s + " bpm"%>
+        <br/>
+        <%="Time Signature: " + @analysis["track"]["time_signature"].to_s + "/4"%>
+        <br/>
 
-<%= energy = @features["energy"]
+        <%= 
+        danceability = @features["danceability"]
+        score = danceability * 10
+        "Danceability: " + score.round.to_s + "/10"
+        %>
+        <br>
 
-if energy > 0.5 and energy < 0.8
-        "This song is lowkey lit"
-    elsif energy > 0.8 
-        "THIS SONG IS HYPE AF"
-    else
-        "This isn't the best song to get hyped to"
-end%>
+        <%= energy = @features["energy"]
+        score = energy * 10
+        "Energy: " + score.round.to_s + "/10"
+        %>
+
+    </div>
+
+    <br/>
+    <p class="text-indigo-600 hover:text-green-400">
+        <%= link_to 'Search A Different Track', new_track_path  %> 
+    </p>
+</div>
