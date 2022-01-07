@@ -21,6 +21,7 @@ class Client
     end
 
     private
+    # get bearer token from spotify api
     def connection
         @connection ||= Faraday.new(
             url: BASE_URL,
